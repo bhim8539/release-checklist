@@ -1,0 +1,32 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f3f6fb; color: #1a1f2d; }
+.app-shell { max-width: 1100px; margin: 0 auto; padding: 1.25rem; }
+header { text-align: center; margin-bottom: 1rem; }
+header h1 { margin: 0; font-size: 2rem; }
+header p { margin: 0.25rem 0 1rem 0; color: #5f6c80; }
+.card { background: #fff; border: 1px solid #dce1eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+#main { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.hidden { display: none !important; }
+.table { width: 100%; border-collapse: collapse; }
+.table thead th { text-align: left; border-bottom: 2px solid #e5e9f2; padding: 0.65rem 0; }
+.table td { border-bottom: 1px solid #ebeff6; padding: 0.65rem 0; }
+.btn-small { border: 1px solid #4b78ff; background: #4b78ff; color: #fff; border-radius: 4px; padding: 0.3rem 0.6rem; cursor: pointer; }
+.btn-small:hover { opacity: .9; }
+.top-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: .75rem; }
+label { display: block; margin-bottom: .5rem; font-weight: 600; }
+label span { color: #e03b64; margin-left: .25rem; }
+input[type='text'], input[type='datetime-local'], textarea { width: 100%; padding: .5rem; border: 1px solid #cbd3e4; border-radius: 5px; }
+fieldset { border: 1px solid #dce1eb; border-radius: 6px; padding: .7rem; margin-bottom: .75rem; }
+legend { padding: 0 .4rem; font-weight: 600; }
+.form-actions { display: flex; gap: .5rem; margin-top: .5rem; }
+button { border: 0; border-radius: 5px; cursor: pointer; padding: .6rem 1rem; color: #fff; background: #4b78ff; }
+button.danger { background: #f03f56; }
+button:hover { opacity: .88; }
+footer { text-align: center; margin-top: .75rem; color: #6f7f98; }
+.status-pill { display: inline-block; padding: .2rem .5rem; border-radius: 999px; color: #fff; font-size: .75rem; }
+.status-planned { background: #6b7dff; }
+.status-ongoing { background: #ffa923; }
+.status-done { background: #1da468; }
+@media (max-width: 930px) {
+  #main { grid-template-columns: 1fr; }
+}

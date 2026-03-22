@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReleaseCheck</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header>
+      <h1>ReleaseCheck</h1>
+      <p>Your all-in-one release checklist tool</p>
+    </header>
+
+    <section id="main">
+      <section id="release-list-container" class="card">
+        <div class="top-row"><h2>Releases</h2><button id="newReleaseButton">New release</button></div>
+        <div id="releaseList"></div>
+      </section>
+
+      <section id="release-form-container" class="card hidden">
+        <div class="top-row"><h2 id="formTitle">New Release</h2><button id="deleteReleaseButton" class="danger hidden">Delete</button></div>
+        <form id="releaseForm">
+          <label>Name<span>*</span><input name="name" id="name" required /></label>
+          <label>Due date<span>*</span><input type="datetime-local" name="due_date" id="due_date" required /></label>
+          <label>Additional info<textarea id="additional_info" name="additional_info" rows="3"></textarea></label>
+
+          <fieldset>
+            <legend>Steps</legend>
+            <div id="steps"></div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit" id="saveReleaseButton">Save</button>
+            <button type="button" id="cancelButton">Cancel</button>
+          </div>
+        </form>
+      </section>
+    </section>
+
+    <footer>
+      <small>Simple release checklist app backed by PostgreSQL API</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: releasecheck
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/releasecheck
+      DATABASE_SSL: 'false'
+      PORT: '4000'
+    ports:
+      - '4000:4000'
+    depends_on:
+      - db
+
+volumes:
+  dbdata:
